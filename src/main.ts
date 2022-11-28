@@ -17,3 +17,4 @@ app.mount("#app");
 import axios from 'axios'
 
 app.config.globalProperties.$http = axios;
+
