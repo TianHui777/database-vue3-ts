@@ -4,7 +4,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import {defineComponent, onMounted} from 'vue';
+import {onMounted} from 'vue';
 import Hls from 'hls.js';
 import DPlayer from 'dplayer';
 
@@ -49,18 +49,25 @@ const initPlayer = () => {
         // },
       },
     ],
+
+    highlight: [
+      {
+        time: 20,
+        text: '这是第 20 秒',
+      },
+      {
+        time: 120,
+        text: '这是 2 分钟',
+      },
+    ],
   });
 };
 onMounted(() => {
   initPlayer();
 });
 
-
-// export default defineComponent({
-//   setup() {
-//
-//
-//     return {};
-//   },
-// });
 </script>
+
+<style scoped>
+
+</style>
