@@ -26,7 +26,7 @@ const initPlayer = () => {
     mutex: true,
     logo: 'https://i.loli.net/2019/06/06/5cf8c5d94521136430.png',
     video: {
-      url: 'https://vod.bunediy.com/20210706/NiYYm3Ki/index.m3u8',
+      url: 'http://47.103.40.79:8080/mooc_video/hls/b.m3u8',
       type: 'customHls',
       customType: {
         customHls: (video: any, player: any) => {
