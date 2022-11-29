@@ -1,7 +1,7 @@
 import axios from "axios";
 //创建axios实例
 const service = axios.create({
-    baseURL: "/api",
+    baseURL: "http://localhost:9000",
     // baseURL:"https://api.apiopen.top/api",
     // baseURL:"https://www.fastmock.site/mock/88589a30789822d059bca54bf21044d8/api",
     timeout: 5000,

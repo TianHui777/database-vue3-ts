@@ -1,16 +1,16 @@
-import service from "../index";
+import service from '../index'
 
 // 登录接口所需要的数据
 interface loginData {
-    name: string
-    pwd: string
+    username: string
+    password: string
 }
 
 //登录接口
-export function login(data: loginData) {
+export function login(auth: loginData) {
     return service({
         url: "/login",
-        method: "post",
-        data
+        method: "GET",
+        auth
     })
 }
