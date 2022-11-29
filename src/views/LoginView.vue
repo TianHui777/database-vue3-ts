@@ -35,6 +35,11 @@ import type {FormInstance, FormRules} from 'element-plus'
 import {login} from "../request/api/login"
 import {useRouter} from "vue-router";
 
+import {userStore} from '../stores/userStore'
+
+const Store = userStore();
+
+
 const ruleFormRef = ref<FormInstance>()
 const ruleForm = reactive({
   name: '',
@@ -62,6 +67,8 @@ const submitForm = async (formEl: FormInstance | undefined) => {
   await formEl.validate((valid, fields) => {
     if (valid) {
       login(ruleForm).then(res => {
+        // 获得用户的token
+        window.localStorage.setItem("token", res.data.token)
         router.push('/')
       })
     } else {

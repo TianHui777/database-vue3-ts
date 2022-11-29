@@ -8,6 +8,10 @@ const router = createRouter({
             path: "/",
             name: "home",
             component: HomeView,
+            meta: {
+                requireAuth: true
+            }
+
         },
 
         {
@@ -44,5 +48,20 @@ const router = createRouter({
         },
     ],
 });
+
+
+//登录权限设置
+router.beforeEach((to, from, next) => {
+    if (to.meta.requireAuth) {
+        if (window.localStorage.getItem("token")) {
+            next();
+        } else {
+            next({path: '/login'})
+        }
+    } else {
+        next();
+    }
+})
+
 
 export default router;

@@ -6,7 +6,8 @@ const service = axios.create({
     // baseURL:"https://www.fastmock.site/mock/88589a30789822d059bca54bf21044d8/api",
     timeout: 5000,
     headers: {
-        "Content-Type": "application/json;charset=utf-8"
+        "Content-Type": "application/json;charset=utf-8",
+
     }
 })
 
