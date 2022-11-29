@@ -11,6 +11,14 @@ export const userStore = defineStore('userInfo', {
             token: '',
         }
     },
-    getters: {},
-    actions: {}
+    getters: {
+
+
+    },
+    actions: {
+        settoken:()=>{
+        }
+    }
+
+
 })
