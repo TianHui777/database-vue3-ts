@@ -1,10 +1,16 @@
 <template>
-  <div>管理员界面</div>
+  <!--管理员界面-->
+  <AdminLayout></AdminLayout>
 </template>
 
-<script>
+<script setup lang="ts">
+import AdminLayout from "../components/adminLayout/AdminLayout.vue";
 </script>
 
-<style scoped>
+<style lang="less">
+@import "../assets/style/adminless/adminindex.less";
 
+#app {
+  height: 100%;
+}
 </style>
