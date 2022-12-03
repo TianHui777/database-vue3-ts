@@ -19,7 +19,7 @@ export const adminStore = defineStore("adminStore", {
     updateIsCollapse() {
       this.isCollapse = !this.isCollapse;
     },
-    selectMenu(val) {
+    selectMenu(val: any) {
       // val.name == "adminHome"
       //   ? (this.currentMenu = null)
       //   : (this.currentMenu = val);
@@ -32,7 +32,7 @@ export const adminStore = defineStore("adminStore", {
         result == -1 ? this.tabList.push(val) : "";
       }
     },
-    closeTab(val) {
+    closeTab(val: any) {
       const res = this.tabList.findIndex((item) => item.name === val.name);
       this.tabList.splice(res, 1);
     },
