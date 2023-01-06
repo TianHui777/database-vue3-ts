@@ -2,22 +2,6 @@
   <el-header>
     <!--Header左侧-->
     <div class="l-content">
-      <!--菜单图标-->
-      <el-button size="small">
-        <el-icon :size="20">
-          <svg
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-            data-v-029747aa=""
-          >
-            <path
-              fill="currentColor"
-              d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32H160zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32H608zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32H160zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32H608z"
-            ></path>
-          </svg>
-        </el-icon>
-      </el-button>
-
       <!--面包屑-->
       <el-breadcrumb separator="/" class="breadcrumb">
         <el-breadcrumb-item :to="{ path: '/admin' }">首页</el-breadcrumb-item>
@@ -33,12 +17,14 @@
       <el-dropdown>
         <span class="el-dropdown-link">
           <!--用户头像-->
-          <img src="" alt="" class="userImg" />
+          <img
+            src="http://gaga-images.paixin.com/photos2/2021/0504/6090bddc947f3.jpeg?imageView2/2/w/632/h/389"
+            class="userImg"
+          />
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>个人中心</el-dropdown-item>
-            <el-dropdown-item>退出</el-dropdown-item>
+            <el-dropdown-item @click="handleLogOut">退出</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -49,16 +35,25 @@
 <script>
 import { adminStore } from "@/stores/adminStore.ts";
 import { computed } from "vue";
+import { useRouter } from "vue-router";
 
 export default {
   setup() {
     let store = adminStore();
+    const router = useRouter();
     //面包屑
     const current = computed(() => {
       return store.currentMenu;
     });
+    //登出
+    const handleLogOut = () => {
+      router.push({
+        name: "login",
+      });
+    };
     return {
       current,
+      handleLogOut,
     };
   },
 };

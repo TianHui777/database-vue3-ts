@@ -1,6 +1,6 @@
 <template>
   <!--  左侧菜单栏-->
-  <el-aside width="180px">
+  <el-aside width="200px">
     <el-menu
       class="el-menu-vertical-demo"
       background-color="#304156"
@@ -62,25 +62,25 @@ export default {
         icon: "",
         children: [
           {
-            path: "/typeManagement",
-            name: "typeManagement",
-            label: "课程分类管理",
-            icon: "",
-            url: "",
-          },
-          {
             path: "/infoManagement",
             name: "infoManagement",
             label: "课程信息管理",
             icon: "",
             url: "",
           },
+          {
+            path: "/fileManagement",
+            name: "fileManagement",
+            label: "课程资料管理",
+            icon: "",
+            url: "",
+          },
         ],
       },
       {
-        path: "/fileManagement",
-        name: "fileManagement",
-        label: "课程资料管理",
+        path: "/userManagement",
+        name: "userManagement",
+        label: "用户管理",
         icon: "",
         url: "",
       },

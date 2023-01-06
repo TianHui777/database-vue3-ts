@@ -10,7 +10,6 @@ const router = createRouter({
         requireAuth: true,
       },
       component: () => import("../views/HomeView.vue"),
-
     },
 
     {
@@ -59,20 +58,25 @@ const router = createRouter({
             import("../components/adminLayout/Management/FileManagement.vue"),
         },
         {
-          //课程分类管理
-          path: "/typeManagement",
-          name: "typeManagement",
-          component: () =>
-            import("../components/adminLayout/Management/TypeManagement.vue"),
-        },
-        {
           //课程信息管理
           path: "/infoManagement",
           name: "infoManagement",
           component: () =>
             import("../components/adminLayout/Management/InfoManagement.vue"),
         },
+        {
+          //用户管理
+          path: "/userManagement",
+          name: "userManagement",
+          component: () =>
+            import("../components/adminLayout/Management/UserManagement.vue"),
+        },
       ],
+    },
+    {
+      path: "/leader",
+      name: "leader",
+      component: () => import("../views/LeaderView.vue"),
     },
   ],
 });
